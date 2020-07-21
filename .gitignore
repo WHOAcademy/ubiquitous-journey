@@ -5,7 +5,7 @@ bin/*
 .project
 /.bin
 /_test/secrets/*.json
-
+who-lxp-*
 # produced by the kill all
 *-delete.json
 
