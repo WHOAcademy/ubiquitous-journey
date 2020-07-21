@@ -6,13 +6,14 @@ destination: &ci_cd_ns labs-ci-cd
 #############
 jenkins_values: &jenkins_values
   persistence: true
-  source_secrets:
+  source_secrets: {}
+  sealed_secrets:
     - name: git-auth
-      username: idm-sa
-      password: thisisdefinitelymypassword
+      username: AgAToAeME4rtKxRm8dnefMiXLiiMzIxzgO4Z00BazktGofXhUnXWSKTx27q/3QMNNqOSFXcwsD172Nf+ptSMDiu9hRlwxTkLVqsxwDjQFjYna6J6IiwCARWKxekjJ/C87M2NgFVSEzVdQ0Xs4aHLiJTotkJ59CxJWJ7MUiUCxEF8hdwx8zeNx7079m2pNulaRFB/xGYWnCs2+JTXrpf5WOUeErGz7ulih5VNoVhujQvUvHXVSMCGc4oGcrogEa/jEdfnHwsvweVVyopGMUiyc2y7VPKQtx1NKz40m30cQJAFSkqLkdr4vefrAV6GoYF6SahTOyBEs8YYqNL5MZZzYDp5PV/gcbjW/Orvd11S3grYr96l5mq34jhwcqbfv3FaiED8c4cy2O0ZcYTegTQOZeBXkqTrgeQDyGvDatz5URRGEOP+sLfjivF28xMbTYHDjzIzevdmxA5tmxYnFd6Ly8SK219qts+DZf9aTwuVUTcq6nLTV1yMHDMzniH+SHKHaNifPKDnZrBv583/5MQvyhYFMoclSGux0lzuNVGV53H7+rYKl1xekdddXP+6lR5/5ZelX4KippGFMVqwYOO47tR67gB1V2YUO8sKn4GFmbBrzZ0eTAVgyNLP5jHKp7mvmGeFhDsct1uEGbKb57NyjtMNWBQKebcuH6E8NdF8R2Zy11EKos67VjIU1XO1n3rRQT2YR0qaL1GpNA==
+      password: AgBSqfUBVE+sm3vtpTFjUxxFRYCW7awNCdU//LNuzSnKAG8ilEzznUYKNYNXSq+rvzyd28iwr43wBPqOPBy7roznM+P+uMX5kS0xRKXM7s2b1Qa4juN5GMWAzH3jBVdI4pbQDrgIaqOKY3pLIlQP50zTjqpH9itr9bskLhE59xN3pxYTk0XKZT8RKnSNGbCtN7siIoXA5Rt0JMFbOwgT9/+aP/maXpVJJAw7GMw0tanrEuuA0w10UXk40uBftNHqJcGs1vmAkBWsx15LrL0lBdUUGQjeGsNm4nY0PTlM9rHV1hHuA6tp+PaNCXfbKVl1pNhdl5HH4oyV4k9UVzSZBJA5Wva/tGqgFY9bnOdTGq45/lO/OsaChSFLWJJFpitlybzjQ2h9x3OfjB2gVQLwwaX6V3orhLqaaer+zT/lc38Ggf8EELCxBfolWHP9vDc3NX9DlAsX0di5HQQS+KTcQM66fV0PnLV/u87i6FQnQhJjj+WIKjjvoQRwdNoWubjFoeBE5UCig6H7RTUEy0R3jt2seMN6SMn8Ry8em5FF4Yo+jUDlBxq2SyoeqCrD6Yv0NY95FqqWTkWa6R59VbnM997fKMfIFnN4atAQEsRJw6aFr+8PRNCyhxjAoOS2vgMQ9DetH6eUn0pg9B38OzX7U0DVHdbElXhpNHRJbUoue36QG1jno8holtCmNQf18aP1RlUf5kYsGsstcr8DxIaTD37Nw0SMUTjstAIOnpwQRSNGPgOLOOC5hheU
     - name: nexus-password
-      username: admin
-      password: admin123
+      username: AgDGsNlK8GdyXBvfXRUM8rsdD8yXTXWl5w1gnyoJ4B5oEYldIrnwWiLpoofHFsDu8uFH2gGstwsaFmu60V/IBfmyc8Wakhd/KZz5+EGGbhyiic8Xa173WahlkvCTn7FiSZMlWhsablFUIM0t4VXtf5PYSc/r7zXth1oL0msKYOvmDTOZuhXXf5y9U/0nUQK9GFUitF+8XkGTXGzUod6mUvp0OZFciFF7MAGGIl2CTeS+7Aamz5ffwIZXjXdGOtMZZWATuNuYW8Jr1jNWMHCpc8F6pE/SIaHI4uc0nlQJTWlxNbWm+3HvhRcCzBBfaLqHMFp0n34Lh0TmJ+FYeXQonIvrkwppZ8/DuhbIG+vnURb9tNwKLgLXToZRVnl8RvMGc+nT2xRfL642bkJUBj38knn1o+mgAGaPZ8D303uTypkYlCmQ3baEjbhwO8ifkjmYtt91QxbREP/HHSeR/hQOXpd+mxGfkelSQ6BKgoYQrvcpIEyyeltVWgxjca8oMMyNXa16W5eMl5eNmUIgZyvSxG1Z2RTMW3Y4oZ8NSKG9Ot91Cbs+EdUPKHXPfbrWCeK5VrYttD8dDOQxjeu0jfdzN4DYh+nAjbE4XRUo/xclvGVeft5xGJjG2JcZN4qL/7ZgkndwAKx/V6lnrT1bunX18LnDT0kGIUUbLO05gEENFLXpC7hi6a7ImPyXnBwDtCgziy4R802T+Q==
+      password: AgAF6SV49V47SQW/wMxQfddfDpEskn8mGvfcMVTZ/bY1/zYPImlW9zZ0cMw53swhVjNNBM72nLYvztb5yfasvQPJzCJRgBJF0cpMHzx/C3IGcRViFPMPpu3sbB86uZH7hpuHV82RqXqNxByaH0IdgYu8dv3hsMIG1nnYDMqQ9NIYEeJ9ULN+lcLLO+wldBCg6Ansjo+MUZrl/WzDOvXpB4qp+0NHfGBXTg3nJ6Go6fzrXKxJGYLzYj50Lyc8wKav3nv8NxU/g6Yo5+Q6KLfy8d+BYYPMwzzyQBo8rY06HvsQLcNzrOnEW9a38F08CSrmu+5Dr9BAz6eQ+DutnMhlreeFNVlJohD9LWlMe/zTCQs1F56LJxLgmpMJTtLyj7BuLNyOlaCFfHGJZiABVxKaUtAcU8W9iDnZbeq5Ea1mkZAP9Et/tAerZSl829lX9J0vKzl8dgFH4oWcsWw7POH8LNt78Hs4EeNQZhyVw7KomsrL/C2M8YVAiU1olbr5o1I3SUHLTYtid6TjnmxYDB8Bd6b+xuZ5JNaGQOm80soKX3IwvImf85m8MUoi897VzN/5eZpA/eARLH1pcOFJEQ7Br4/wK4hhUY3e/fDsm5gOSmHvo+rdLu+ne1E37QEAzXhCNDLikrsGagf6y/VF4H4C2+rRr2aR+a+C3ffjgNcSdtp9sq2ATmEQirGE8ZehH2I2XJ9/yTmaWiKhXw==
   deployment:
     openshiftauth: true
     imagestream:
@@ -240,7 +241,7 @@ applications:
       *jenkins_values
     ignore_differences: *jenkins_ignore_differences
   - name: pact-broker
-    enabled: true
+    enabled: false
     source: https://github.com/rht-labs/helm-charts.git
     source_path: charts/pact-broker
     source_ref: "pact-broker-0.0.2"
@@ -258,7 +259,7 @@ applications:
       *sync_policy_true
     destination: *ci_cd_ns
   - name: crw
-    enabled: false
+    enabled: true
     destination: crw
     source: https://github.com/rht-labs/refactored-adventure
     source_path: crw/base
@@ -278,7 +279,7 @@ applications:
     values:
       *zalenium_values
   - name: hoverfly
-    enabled: false
+    enabled: true
     source: https://github.com/helm/charts.git
     source_path: incubator/hoverfly
     sync_policy:
