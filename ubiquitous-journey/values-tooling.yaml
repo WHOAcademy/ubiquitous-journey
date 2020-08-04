@@ -33,7 +33,7 @@ jenkins_values: &jenkins_values
       - name: JENKINS_OPTS
         value: '--sessionTimeout=180'
       - name: GITHUB_ACCOUNT
-        value: 'who-lxp'
+        value: 'WHOAcademy'
       - name: GITHUB_ORG
         value: 'true'
       - name: GITHUB_TOKEN
