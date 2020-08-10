@@ -220,7 +220,7 @@ sync_policy_no_selfheal: &sync_policy_no_selfheal
 applications:
   - name: nexus
     enabled: true
-    source: https://rht-labs.github.io/helm-charts/
+    source: https://redhat-cop.github.io/helm-charts/
     chart_name: sonatype-nexus
     source_path: ""
     source_ref: "0.0.3"
@@ -230,7 +230,7 @@ applications:
     ignore_differences: *nexus_ignore_differences
   - name: jenkins
     enabled: true
-    source: https://github.com/rht-labs/helm-charts.git
+    source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/jenkins
     source_ref: "jenkins-0.0.17"
     sync_policy:
@@ -241,7 +241,7 @@ applications:
     ignore_differences: *jenkins_ignore_differences
   - name: pact-broker
     enabled: false
-    source: https://github.com/rht-labs/helm-charts.git
+    source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/pact-broker
     source_ref: "pact-broker-0.0.2"
     sync_policy:
@@ -251,7 +251,7 @@ applications:
       *pact_broker_values
   - name: sonarqube
     enabled: true
-    source: https://github.com/rht-labs/helm-charts.git
+    source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/sonarqube
     source_ref: "sonarqube-0.0.4"
     sync_policy:
@@ -317,7 +317,7 @@ applications:
       *mattermost_values
   - name: etherpad
     enabled: false
-    source: https://github.com/rht-labs/helm-charts.git
+    source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/etherpad
     destination: *ci_cd_ns
     source_ref: "etherpad-0.0.1"
