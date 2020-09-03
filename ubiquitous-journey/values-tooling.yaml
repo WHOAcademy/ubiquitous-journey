@@ -5,7 +5,10 @@ destination: &ci_cd_ns labs-ci-cd
 # 🛎 Jenkins Custom Values
 #############
 jenkins_values: &jenkins_values
-  source_secrets: {}
+  source_secrets:
+    - name: this-is-a-test
+      username: mickey
+      password: mouse
   sealed_secrets:
     - name: git-auth
       username: AgAToAeME4rtKxRm8dnefMiXLiiMzIxzgO4Z00BazktGofXhUnXWSKTx27q/3QMNNqOSFXcwsD172Nf+ptSMDiu9hRlwxTkLVqsxwDjQFjYna6J6IiwCARWKxekjJ/C87M2NgFVSEzVdQ0Xs4aHLiJTotkJ59CxJWJ7MUiUCxEF8hdwx8zeNx7079m2pNulaRFB/xGYWnCs2+JTXrpf5WOUeErGz7ulih5VNoVhujQvUvHXVSMCGc4oGcrogEa/jEdfnHwsvweVVyopGMUiyc2y7VPKQtx1NKz40m30cQJAFSkqLkdr4vefrAV6GoYF6SahTOyBEs8YYqNL5MZZzYDp5PV/gcbjW/Orvd11S3grYr96l5mq34jhwcqbfv3FaiED8c4cy2O0ZcYTegTQOZeBXkqTrgeQDyGvDatz5URRGEOP+sLfjivF28xMbTYHDjzIzevdmxA5tmxYnFd6Ly8SK219qts+DZf9aTwuVUTcq6nLTV1yMHDMzniH+SHKHaNifPKDnZrBv583/5MQvyhYFMoclSGux0lzuNVGV53H7+rYKl1xekdddXP+6lR5/5ZelX4KippGFMVqwYOO47tR67gB1V2YUO8sKn4GFmbBrzZ0eTAVgyNLP5jHKp7mvmGeFhDsct1uEGbKb57NyjtMNWBQKebcuH6E8NdF8R2Zy11EKos67VjIU1XO1n3rRQT2YR0qaL1GpNA==
