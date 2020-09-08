@@ -110,6 +110,10 @@ jenkins_values: &jenkins_values
       source_context_dir: "jenkins-agents/jenkins-agent-conftest"
       source_repo: "https://github.com/redhat-cop/containers-quickstarts"
       source_repo_ref: "master"
+    - name: "jenkins-agent-zap"
+      source_context_dir: "jenkins-agents/jenkins-agent-zap"
+      source_repo: "https://github.com/mabulgu/containers-quickstarts"
+      source_repo_ref: "feature/zap-agent"
   imagestreams:
     - name: jenkins
     - name: jenkins-agent-mvn
@@ -126,6 +130,7 @@ jenkins_values: &jenkins_values
     - name: jenkins-agent-python38
     - name: jenkins-agent-ruby
     - name: jenkins-agent-conftest
+    - name: jenkins-agent-zap
 
 ##############
 # 🛎 Pact Broker Custom Values
