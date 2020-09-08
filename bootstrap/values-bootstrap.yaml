@@ -45,7 +45,7 @@ argocd-operator:
   enabled: true
   name: argocd
   namespace: *ci_cd
-  instancelabel: who.rht-labs.com/lxp
+  instancelabel: who.int/lxp
   
   # operator manages upgrades etc
   version: v1.6.1
