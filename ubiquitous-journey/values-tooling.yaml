@@ -40,7 +40,7 @@ jenkins_values: &jenkins_values
         value: "TODO_ADD_TOKEN"
   buildconfigs:
     # Jenkins S2I from Red Hat Labs
-    - name: *name
+    - name: jenkins
       build_trigger_secret: 'shhhhh-this-is-my-super-duper-secret123-shhhhh'
       strategy_type: "Source"
       source_secret: 'git-auth'
