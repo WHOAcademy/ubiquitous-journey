@@ -207,6 +207,9 @@ wekan_values: &wekan_values
   route:
     enabled: true
 
+postgresql_values: &postgresql_values
+  database: test
+
 ##############
 # 🛎 Mattermost Custom Values
 # Values reference https://github.com/mattermost/mattermost-helm
@@ -406,3 +409,4 @@ applications:
     sync_policy:
       *sync_policy_true
     destination: *ci_cd_ns
+    values: *postgresql_values
