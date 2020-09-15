@@ -382,7 +382,7 @@ applications:
     sync_policy:
       *sync_policy_true
     no_helm: true
-  - name: new-playground-/mattermost
+  - name: new-playground-mattermost
     enabled: true
     source: https://github.com/mattermost/mattermost-helm.git
     source_path: charts/mattermost-team-edition
