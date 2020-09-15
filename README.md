@@ -98,12 +98,13 @@ Our standard approach is to deploy all the tooling to the `labs-ci-cd` namespace
 See: [ArgoCD App of Apps approach](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#app-of-apps)
 
 ```bash
-argocd app create ubiquitous-journey \
+argocd app create playground-ubiquitous-journey-6 \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/rht-labs/ubiquitous-journey.git \
+    --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
+    --revision new-playground \
     --path "ubiquitous-journey" --values "values-tooling.yaml"
-argocd app sync ubiquitous-journey
+argocd app sync playground-ubiquitous-journey-6
 ```
 
 ##### (B) Deploy using helm ...
