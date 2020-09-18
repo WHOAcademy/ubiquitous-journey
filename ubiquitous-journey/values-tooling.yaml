@@ -223,7 +223,8 @@ mattermost_values: &mattermost_values
     mysqlPassword: "matterpass"
   configJSON: {
     "ServiceSettings": {
-      "EnableBotAccountCreation": true,
+      "EnablePostUsernameOverride": true,
+      "EnablePostIconOverride": true,
     },
     "TeamSettings": {
       "EnableUserCreation": false,
