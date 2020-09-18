@@ -222,6 +222,9 @@ mattermost_values: &mattermost_values
     mysqlUser: "mattermost"
     mysqlPassword: "matterpass"
   configJSON: {
+    "ServiceSettings": {
+      "EnableBotAccountCreation": true,
+    },
     "TeamSettings": {
       "EnableUserCreation": false,
       "EnableOpenServer": false,
