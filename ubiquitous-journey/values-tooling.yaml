@@ -221,6 +221,16 @@ mattermost_values: &mattermost_values
     mysqlRootPassword: "mysqlpass"
     mysqlUser: "mattermost"
     mysqlPassword: "matterpass"
+  configJSON: {
+      "ServiceSettings": {
+        "EnablePostUsernameOverride": true,
+        "EnablePostIconOverride": true,
+      },
+      "TeamSettings": {
+        "EnableUserCreation": false,
+        "EnableOpenServer": false,
+      }
+    }
 
 ##############
 # 🐙 Argo Ignore Differences
