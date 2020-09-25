@@ -73,7 +73,8 @@ Finally create the Argo app `bootstrap-journey`:
 argocd app create bootstrap-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/rht-labs/ubiquitous-journey.git \
+    --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
+    --revision "who-int" \
     --path "bootstrap" --values "values-bootstrap.yaml"
 ```
 
@@ -101,7 +102,8 @@ See: [ArgoCD App of Apps approach](https://argoproj.github.io/argo-cd/operator-m
 argocd app create ubiquitous-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/rht-labs/ubiquitous-journey.git \
+    --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
+    --revision "who-int" \
     --path "ubiquitous-journey" --values "values-tooling.yaml"
 argocd app sync ubiquitous-journey
 ```
