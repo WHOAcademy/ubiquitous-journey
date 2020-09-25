@@ -108,24 +108,54 @@ argocd app create ubiquitous-journey \
 argocd app sync ubiquitous-journey
 ```
 
+**Create a new project in argo called `test` with the following values**
+
+Source Repo:
+
+    - https://github.com/rht-labs/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config.git
+    - http://nexus-labs-ci-cd.apps.who.lxp.academy.who.int/repository/helm-charts/
+
+Destinations:
+
+    - https://kubernetes.default.svc    labs-test
+    - https://kubernetes.default.svc    labs-ci-cd
+
 ```bash
-argocd app create test \
-    --dest-namespace labs-test \
+argocd app create lxp-test \
+    --project "test" \
+    --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/lxp-config.git \
     --revision "master" \
     --path "lxp-deployment" --values "values-test.yaml"
-argocd app sync test
+argocd app sync lxp-test
 ```
 
+
+**Create a new project in argo called `staging` with the following values**
+
+Source Repo:
+
+    - https://github.com/rht-labs/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config.git
+    - http://nexus-labs-ci-cd.apps.who.lxp.academy.who.int/repository/helm-charts/
+
+Destinations:
+
+    - https://kubernetes.default.svc    labs-staging
+    - https://kubernetes.default.svc    labs-ci-cd
+
+
 ```bash
-argocd app create staging \
+argocd app create lxp-staging \
+    --project "staging" \
     --dest-namespace labs-staging \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/lxp-config.git \
     --revision "master" \
     --path "lxp-deployment" --values "values-staging.yaml"
-argocd app sync staging
+argocd app sync lxp-staging
 ```
 
 ##### (B) Deploy using helm ...
