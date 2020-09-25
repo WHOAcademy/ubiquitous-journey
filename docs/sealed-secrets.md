@@ -44,3 +44,9 @@ jenkins_values: &jenkins_values
 
 ## 📝 Bring your own certs 
 See [the docs written](https://github.com/bitnami-labs/sealed-secrets/blob/master/docs/bring-your-own-certificates.md) by @jtudelag on Sealed Secrets site!
+
+
+## List of sealed secrets to create:
+1. GitHub
+2. Nexus
+3. Quay
