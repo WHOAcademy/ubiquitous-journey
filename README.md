@@ -108,6 +108,26 @@ argocd app create ubiquitous-journey \
 argocd app sync ubiquitous-journey
 ```
 
+```bash
+argocd app create test \
+    --dest-namespace labs-test \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/WHOAcademy/lxp-config.git \
+    --revision "master" \
+    --path "lxp-deployment" --values "values-test.yaml"
+argocd app sync test
+```
+
+```bash
+argocd app create staging \
+    --dest-namespace labs-staging \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/WHOAcademy/lxp-config.git \
+    --revision "master" \
+    --path "lxp-deployment" --values "values-staging.yaml"
+argocd app sync staging
+```
+
 ##### (B) Deploy using helm ...
 ```bash
 helm template labs -f argo-app-of-apps.yaml ubiquitous-journey/ | oc apply -f -
