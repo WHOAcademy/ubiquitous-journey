@@ -150,7 +150,7 @@ Destinations:
 ```bash
 argocd app create lxp-staging \
     --project "staging" \
-    --dest-namespace labs-staging \
+    --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/lxp-config.git \
     --revision "master" \
