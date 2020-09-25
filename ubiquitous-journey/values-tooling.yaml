@@ -227,7 +227,7 @@ mattermost_values: &mattermost_values
         "EnablePostIconOverride": true,
       },
       "TeamSettings": {
-        "EnableUserCreation": false,
+        "EnableUserCreation": true,
         "EnableOpenServer": false,
       }
     }
