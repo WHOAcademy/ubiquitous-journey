@@ -393,7 +393,7 @@ applications:
       *sync_policy_true
     no_helm: true
   - name: mattermost
-    enabled: true
+    enabled: false
     source: https://github.com/mattermost/mattermost-helm.git
     source_path: charts/mattermost-team-edition
     destination: *ci_cd_ns
