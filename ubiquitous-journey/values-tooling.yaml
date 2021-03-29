@@ -363,7 +363,7 @@ applications:
     values:
       *zalenium_values
   - name: hoverfly
-    enabled: true
+    enabled: false
     source: https://github.com/helm/charts.git
     source_path: incubator/hoverfly
     sync_policy:
