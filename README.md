@@ -103,7 +103,7 @@ argocd app create ubiquitous-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int" \
+    --revision "who-int-dev" \
     --path "ubiquitous-journey" --values "values-tooling.yaml"
 argocd app sync ubiquitous-journey
 ```
@@ -112,9 +112,9 @@ argocd app sync ubiquitous-journey
 
 Source Repo:
 
-    - https://github.com/rht-labs/helm-charts.git
-    - https://github.com/WHOAcademy/lxp-config.git
-    - http://nexus-labs-ci-cd.apps.who.lxp.academy.who.int/repository/helm-charts/
+    - https://github.com/redhat-cop/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config-dev.git
+    - https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
 
@@ -126,8 +126,8 @@ argocd app create lxp-test \
     --project "test" \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/WHOAcademy/lxp-config.git \
-    --revision "master" \
+    --repo https://github.com/WHOAcademy/lxp-config-dev.git \
+    --revision "main" \
     --path "lxp-deployment" --values "values-test.yaml"
 argocd app sync lxp-test
 ```
@@ -137,9 +137,9 @@ argocd app sync lxp-test
 
 Source Repo:
 
-    - https://github.com/rht-labs/helm-charts.git
-    - https://github.com/WHOAcademy/lxp-config.git
-    - http://nexus-labs-ci-cd.apps.who.lxp.academy.who.int/repository/helm-charts/
+    - https://github.com/redhat-cop/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config-dev.git
+    - https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
 
@@ -152,8 +152,8 @@ argocd app create lxp-staging \
     --project "staging" \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/WHOAcademy/lxp-config.git \
-    --revision "master" \
+    --repo https://github.com/WHOAcademy/lxp-config-dev.git \
+    --revision "main" \
     --path "lxp-deployment" --values "values-staging.yaml"
 argocd app sync lxp-staging
 ```
