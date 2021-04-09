@@ -74,7 +74,7 @@ argocd app create bootstrap-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int-prod" \
+    --revision "who-int-dev" \
     --path "bootstrap" --values "values-bootstrap.yaml"
 ```
 
