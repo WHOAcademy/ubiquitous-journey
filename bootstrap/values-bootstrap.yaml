@@ -4,7 +4,7 @@
 # overriding `ci_cd_namespace` directly using helm will not work 🤥
 
 bootstrap-project:
-  enabled: false
+  enabled: true
   ci_cd_namespace: &ci_cd "labs-ci-cd"
   dev_namespace: &dev "labs-dev"
   test_namespace: &test "labs-test"
