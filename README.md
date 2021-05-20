@@ -74,7 +74,7 @@ argocd app create bootstrap-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int-dev" \
+    --revision "who-int-prod" \
     --path "bootstrap" --values "values-bootstrap.yaml"
 ```
 
@@ -103,7 +103,7 @@ argocd app create ubiquitous-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int-dev" \
+    --revision "who-int-prod" \
     --path "ubiquitous-journey" --values "values-tooling.yaml"
 argocd app sync ubiquitous-journey
 ```
@@ -113,7 +113,7 @@ argocd app sync ubiquitous-journey
 Source Repo:
 
     - https://github.com/redhat-cop/helm-charts.git
-    - https://github.com/WHOAcademy/lxp-config-dev.git
+    - https://github.com/WHOAcademy/lxp-config-prod.git
     - https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
@@ -126,7 +126,7 @@ argocd app create lxp-test \
     --project "test" \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/WHOAcademy/lxp-config-dev.git \
+    --repo https://github.com/WHOAcademy/lxp-config-prod.git \
     --revision "main" \
     --path "lxp-deployment" --values "values-test.yaml"
 argocd app sync lxp-test
@@ -138,7 +138,7 @@ argocd app sync lxp-test
 Source Repo:
 
     - https://github.com/redhat-cop/helm-charts.git
-    - https://github.com/WHOAcademy/lxp-config-dev.git
+    - https://github.com/WHOAcademy/lxp-config-prod.git
     - https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
@@ -152,7 +152,7 @@ argocd app create lxp-staging \
     --project "staging" \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/WHOAcademy/lxp-config-dev.git \
+    --repo https://github.com/WHOAcademy/lxp-config-prod.git \
     --revision "main" \
     --path "lxp-deployment" --values "values-staging.yaml"
 argocd app sync lxp-staging
