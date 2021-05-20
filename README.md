@@ -54,7 +54,7 @@ If you want to override namespaces see [Deploy to a custom namespace](#deploy-to
 
 1. Bring down the chart dependencies and install `bootstrap` helm chart in a sweet oneliner 🍾:
 ```bash
-helm template bootstrap --dependency-update  -f bootstrap/values-bootstrap.yaml bootstrap | oc apply -f -
+helm template bootstrap --dependency-update  -f bootstrap/values-bootstrap.yaml bootstrap | oc apply -f-
 ```
 
 2. Because this is GitOps we should manage the config of these roles, projects and ArgoCD itself by adding it to our newly created ArgoCD instance. This means all future changes to these can be tracked and managed in Git! Login to Argo and run the following command.
