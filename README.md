@@ -114,7 +114,7 @@ Source Repo:
 
     - https://github.com/redhat-cop/helm-charts.git
     - https://github.com/WHOAcademy/lxp-config-prod.git
-    - https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/
+    - https://nexus-labs-ci-cd.apps.prod.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
 
@@ -139,7 +139,7 @@ Source Repo:
 
     - https://github.com/redhat-cop/helm-charts.git
     - https://github.com/WHOAcademy/lxp-config-prod.git
-    - https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/
+    - https://nexus-labs-ci-cd.apps.prod.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
 
