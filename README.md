@@ -119,7 +119,7 @@ Source Repo:
 
     - https://github.com/redhat-cop/helm-charts.git
     - https://github.com/WHOAcademy/lxp-config-prod.git
-    - https://nexus-labs-ci-cd.apps.prod.lxp.academy.who.int/repository/helm-charts/
+    - http://sonatype-nexus-service.labs-ci-cd:8081/repository/helm-charts/
 
 Destinations:
 
@@ -144,7 +144,7 @@ Source Repo:
 
     - https://github.com/redhat-cop/helm-charts.git
     - https://github.com/WHOAcademy/lxp-config-prod.git
-    - https://nexus-labs-ci-cd.apps.prod.lxp.academy.who.int/repository/helm-charts/
+    - http://sonatype-nexus-service.labs-ci-cd:8081/repository/helm-charts/
 
 Destinations:
 
@@ -161,6 +161,31 @@ argocd app create lxp-staging \
     --revision "main" \
     --path "lxp-deployment" --values "values-staging.yaml"
 argocd app sync lxp-staging
+```
+
+**Create a new project in argo called `prod` with the following values, also create a namespace called `labs-prod` in OpenShift cluster**
+
+Source Repo:
+
+    - https://github.com/redhat-cop/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config-prod.git
+    - http://sonatype-nexus-service.labs-ci-cd:8081/repository/helm-charts/
+
+Destinations:
+
+    - https://kubernetes.default.svc    labs-prod
+    - https://kubernetes.default.svc    labs-ci-cd
+
+
+```bash
+argocd app create lxp-prod \
+    --project "prod" \
+    --dest-namespace labs-ci-cd \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/WHOAcademy/lxp-config-prod.git \
+    --revision "main" \
+    --path "lxp-deployment" --values "values-prod.yaml"
+argocd app sync lxp-prod
 ```
 
 ##### (B) Deploy using helm ...
