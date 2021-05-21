@@ -108,6 +108,11 @@ argocd app create ubiquitous-journey \
 argocd app sync ubiquitous-journey
 ```
 
+**Create Git repository under `Repositories` in argocd**
+- Repository URL: https://github.com/WHOAcademy/lxp-config-prod.git
+- Username: ****
+- Password: git-auth-token from our Github repo owner account
+
 **Create a new project in argo called `test` with the following values**
 
 Source Repo:
