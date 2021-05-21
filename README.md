@@ -54,7 +54,7 @@ If you want to override namespaces see [Deploy to a custom namespace](#deploy-to
 
 1. Bring down the chart dependencies and install `bootstrap` helm chart in a sweet oneliner 🍾:
 ```bash
-helm template bootstrap --dependency-update  -f bootstrap/values-bootstrap.yaml bootstrap | oc apply -f -
+helm template bootstrap --dependency-update  -f bootstrap/values-bootstrap.yaml bootstrap | oc apply -f-
 ```
 
 2. Because this is GitOps we should manage the config of these roles, projects and ArgoCD itself by adding it to our newly created ArgoCD instance. This means all future changes to these can be tracked and managed in Git! Login to Argo and run the following command.
@@ -103,18 +103,23 @@ argocd app create ubiquitous-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int" \
+    --revision "who-int-prod" \
     --path "ubiquitous-journey" --values "values-tooling.yaml"
 argocd app sync ubiquitous-journey
 ```
+
+**Create Git repository under `Repositories` in argocd**
+- Repository URL: https://github.com/WHOAcademy/lxp-config-prod.git
+- Username: ****
+- Password: git-auth-token from our Github repo owner account
 
 **Create a new project in argo called `test` with the following values**
 
 Source Repo:
 
-    - https://github.com/rht-labs/helm-charts.git
-    - https://github.com/WHOAcademy/lxp-config.git
-    - http://nexus-labs-ci-cd.apps.who.lxp.academy.who.int/repository/helm-charts/
+    - https://github.com/redhat-cop/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config-prod.git
+    - https://nexus-labs-ci-cd.apps.prod.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
 
@@ -126,8 +131,8 @@ argocd app create lxp-test \
     --project "test" \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/WHOAcademy/lxp-config.git \
-    --revision "master" \
+    --repo https://github.com/WHOAcademy/lxp-config-prod.git \
+    --revision "main" \
     --path "lxp-deployment" --values "values-test.yaml"
 argocd app sync lxp-test
 ```
@@ -137,9 +142,9 @@ argocd app sync lxp-test
 
 Source Repo:
 
-    - https://github.com/rht-labs/helm-charts.git
-    - https://github.com/WHOAcademy/lxp-config.git
-    - http://nexus-labs-ci-cd.apps.who.lxp.academy.who.int/repository/helm-charts/
+    - https://github.com/redhat-cop/helm-charts.git
+    - https://github.com/WHOAcademy/lxp-config-prod.git
+    - https://nexus-labs-ci-cd.apps.prod.lxp.academy.who.int/repository/helm-charts/
 
 Destinations:
 
@@ -152,8 +157,8 @@ argocd app create lxp-staging \
     --project "staging" \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/WHOAcademy/lxp-config.git \
-    --revision "master" \
+    --repo https://github.com/WHOAcademy/lxp-config-prod.git \
+    --revision "main" \
     --path "lxp-deployment" --values "values-staging.yaml"
 argocd app sync lxp-staging
 ```
