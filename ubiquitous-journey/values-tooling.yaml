@@ -112,12 +112,12 @@ jenkins_values: &jenkins_values
       source_repo_ref: "master"
     - name: "jenkins-agent-zap"
       source_context_dir: "jenkins-agents/jenkins-agent-zap"
-      source_repo: "https://github.com/mabulgu/containers-quickstarts"
-      source_repo_ref: "feature/zap-agent"
+      source_repo: "https://github.com/WHOAcademy/containers-quickstarts"
+      source_repo_ref: "who-int-dev"
     - name: "jenkins-agent-sonarqube"
       source_context_dir: "jenkins-agents/jenkins-agent-sonarqube"
-      source_repo: "https://github.com/mabulgu/containers-quickstarts"
-      source_repo_ref: "feature/python38-2"
+      source_repo: "https://github.com/WHOAcademy/containers-quickstarts"
+      source_repo_ref: "who-int-dev"
   imagestreams:
     - name: jenkins
     - name: jenkins-agent-mvn
