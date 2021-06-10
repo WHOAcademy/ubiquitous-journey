@@ -360,7 +360,7 @@ applications:
     values:
       *pact_broker_values
   - name: sonarqube
-    enabled: false
+    enabled: true
     source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/sonarqube
     source_ref: "sonarqube-0.0.13"
