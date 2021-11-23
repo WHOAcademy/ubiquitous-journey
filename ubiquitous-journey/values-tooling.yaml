@@ -50,7 +50,7 @@ jenkins_values: &jenkins_values
       source_context_dir: '/'
       builder_image_kind: "DockerImage"
       builder_image_name: quay.io/openshift/origin-jenkins
-      builder_image_tag: "4.3.0"
+      builder_image_tag: "4.5.0"
     # Jenkins agents for running builds etc
     - name: "jenkins-agent-mvn"
       source_context_dir: "jenkins-agents/jenkins-agent-mvn"
