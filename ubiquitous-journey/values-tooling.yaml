@@ -17,7 +17,7 @@ jenkins_values: &jenkins_values
     openshiftauth: true
     imagestream:
       name: jenkins
-      tag: '4.3.0'
+      tag: latest
     limits:
       memory_request: 2Gi
       memory_limit: 6Gi
