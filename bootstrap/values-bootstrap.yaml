@@ -48,7 +48,7 @@ argocd-operator:
   instancelabel: who.int/lxp
   
   # operator manages upgrades etc
-  # version: v1.6.1
+  version: v2.1.6
   operator:
     version: argocd-operator.v0.0.11
     channel: alpha
