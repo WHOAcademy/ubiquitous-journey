@@ -54,7 +54,7 @@ jenkins_values: &jenkins_values
     # Jenkins agents for running builds etc
     - name: "jenkins-agent-mvn"
       source_context_dir: "jenkins-agents/jenkins-agent-mvn"
-      source_repo: "https://github.com/redhat-cop/containers-quickstarts"
+      source_repo: "https://github.com/WHOAcademy/containers-quickstarts"
       source_repo_ref: "master"
       builder_image_name: "quay.io/eformat/origin-jenkins-agent-maven"
       builder_image_tag: "latest"
