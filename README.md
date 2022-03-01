@@ -74,7 +74,7 @@ argocd app create bootstrap-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int-dev" \
+    --revision "who-int-test" \
     --path "bootstrap" --values "values-bootstrap.yaml"
 ```
 
@@ -103,7 +103,7 @@ argocd app create ubiquitous-journey \
     --dest-namespace labs-ci-cd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/WHOAcademy/ubiquitous-journey.git \
-    --revision "who-int-dev" \
+    --revision "who-int-test" \
     --path "ubiquitous-journey" --values "values-tooling.yaml"
 argocd app sync ubiquitous-journey
 ```
