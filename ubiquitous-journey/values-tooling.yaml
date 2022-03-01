@@ -1,5 +1,6 @@
 # Over rides for default values in Helm Charts
 destination: &ci_cd_ns labs-ci-cd
+helm_repository: &helm_repo "https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/"
 
 ##############
 # 🛎 Jenkins Custom Values
@@ -258,6 +259,17 @@ mattermost_values: &mattermost_values
       }
     }
 
+learning_delivery_api: &learning_delivery_api_svc
+  env:
+    debug: False
+  mysql:
+    primary:
+      persistence:
+        enabled: true
+    secondary:
+      persistence:
+        enabled: true
+
 ##############
 # 🛎 Nexus Custom Values
 # Values reference https://github.com/redhat-cop/helm-charts/tree/master/charts/sonatype-nexus
@@ -265,10 +277,8 @@ mattermost_values: &mattermost_values
 nexus_values: &nexus_values
   persistence:
     accessMode: ReadWriteOnce
-    # accessMode: ReadWriteMany
     enabled: true
-    storageSize: 25Gi
-    # storageClass: azure-file-storage
+    storageSize: 20Gi
 
 ##############
 # 🐙 Argo Ignore Differences
@@ -478,3 +488,13 @@ applications:
       *sync_policy_true
     destination: *ci_cd_ns
     values: *mysql_values
+  - name: learning-delivery-api
+    enabled: true
+    source: *helm_repo
+    source_path: ""
+    chart_name: learning-delivery-api
+    sync_policy_automated: false
+    destination: *ci_cd_ns
+    source_ref: 2.0.2
+    ignore_differences: *ignore_differences
+    values: *learning_delivery_api_svc
