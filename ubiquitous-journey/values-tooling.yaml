@@ -267,6 +267,7 @@ nexus_values: &nexus_values
     accessMode: ReadWriteOnce
     enabled: true
     storageSize: 25Gi
+    storageClass: azure-file-storage
 
 ##############
 # 🐙 Argo Ignore Differences
