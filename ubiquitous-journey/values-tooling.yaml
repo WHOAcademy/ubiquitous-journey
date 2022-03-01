@@ -266,7 +266,7 @@ nexus_values: &nexus_values
   persistence:
     accessMode: ReadWriteOnce
     enabled: true
-    storageSize: 20Gi
+    storageSize: 25Gi
 
 ##############
 # 🐙 Argo Ignore Differences
