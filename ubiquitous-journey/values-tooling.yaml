@@ -264,10 +264,11 @@ mattermost_values: &mattermost_values
 #############
 nexus_values: &nexus_values
   persistence:
-    accessMode: ReadWriteMany
+    accessMode: ReadWriteOnce
+    # accessMode: ReadWriteMany
     enabled: true
     storageSize: 25Gi
-    storageClass: azure-file-storage
+    # storageClass: azure-file-storage
 
 ##############
 # 🐙 Argo Ignore Differences
