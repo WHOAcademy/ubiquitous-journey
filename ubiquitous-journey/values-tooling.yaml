@@ -352,7 +352,7 @@ applications:
       *nexus_values
     ignore_differences: *nexus_ignore_differences
   - name: jenkins
-    enabled: true
+    enabled: false
     source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/jenkins
     source_ref: "jenkins-0.0.20"
@@ -373,7 +373,7 @@ applications:
     values:
       *pact_broker_values
   - name: sonarqube
-    enabled: true
+    enabled: false
     source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/sonarqube
     source_ref: "sonarqube-0.0.13"
@@ -391,7 +391,7 @@ applications:
     no_helm: true
     ignore_differences: *crw_ignore_differences
   - name: zalenium
-    enabled: true
+    enabled: false
     source: https://github.com/zalando/zalenium.git
     source_path: charts/zalenium
     source_ref: "master"
@@ -447,7 +447,7 @@ applications:
     sync_policy:
       *sync_policy_true
   - name: mongodb
-    enabled: true
+    enabled: false
     source: https://whoacademy.github.io/helm-charts/
     chart_name: mongodb
     source_path: ""
@@ -457,7 +457,7 @@ applications:
     destination: *ci_cd_ns
     ignore_differences: *mongodb_ignore_differences
   - name: postgresql
-    enabled: true
+    enabled: false
     source: https://whoacademy.github.io/helm-charts/
     chart_name: postgresql
     source_path: ""
@@ -467,7 +467,7 @@ applications:
     destination: *ci_cd_ns
     values: *postgresql_values
   - name: mysql
-    enabled: true
+    enabled: false
     source: https://charts.bitnami.com/bitnami
     chart_name: mysql
     source_path: ""
