@@ -53,6 +53,10 @@ argocd-operator:
     version: argocd-operator.v0.2.0
     channel: alpha
     name: argocd-operator
+    # This will not work as this value is hard-coded
+    # in the helm chart
+    # https://github.com/redhat-cop/helm-charts/blob/argocd-operator-0.0.17/charts/argocd-operator/templates/Subscription.yaml#L11
+    # TODO:: Update the Helm Chart to enable this option
     installPlanApproval: Manual
 
   metrics:
