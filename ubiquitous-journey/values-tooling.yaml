@@ -260,6 +260,8 @@ mattermost_values: &mattermost_values
     }
 
 learning_delivery_api: &learning_delivery_api_svc
+  storage:
+    volume_capacity: 3Gi
   env:
     debug: False
   mysql:
