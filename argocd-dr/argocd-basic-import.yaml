@@ -1,0 +1,8 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+spec:
+  import:
+    name: argocd-export
+    namespace: labs-ci-cd
