@@ -1,0 +1,50 @@
+# Over rides for default values in Helm Charts
+destination: &ci_cd_ns labs-velero
+helm_repository: &helm_repo "https://nexus-labs-ci-cd.apps.dev.lxp.academy.who.int/repository/helm-charts/"
+
+learning_delivery_api: &learning_delivery_api_svc
+  storage:
+    volume_capacity: 1Gi
+  env:
+    debug: False
+  mysql:
+    primary:
+      persistence:
+        enabled: true
+    secondary:
+      persistence:
+        enabled: true
+
+
+##############
+# 🐙 Argo Sync Policy
+#############
+sync_policy_true: &sync_policy_true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      #validate: true # disable it due to argo-operator update, Argo CD 2.0 don't have this flag
+
+sync_policy_no_selfheal: &sync_policy_no_selfheal
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+      #validate: true # disable it due to argo-operator update, Argo CD 2.0 don't have this flag
+
+##############
+# 🛎 Argo App of Apps declaration
+#############
+
+# enabled true on an app is to tell helm to create an argo app cr for this item
+applications:
+  - name: learning-delivery-api
+    enabled: true
+    source: *helm_repo
+    source_path: ""
+    chart_name: learning-delivery-api
+    sync_policy_automated: false
+    destination: *ci_cd_ns
+    source_ref: 2.0.2
+    values: *learning_delivery_api_svc
