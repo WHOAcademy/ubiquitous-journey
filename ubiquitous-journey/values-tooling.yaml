@@ -232,7 +232,7 @@ applications:
     destination: *ci_cd_ns
     ignore_differences: *nexus_ignore_differences
   - name: jenkins
-    enabled: true
+    enabled: false
     source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/jenkins
     source_ref: "jenkins-0.0.17"
