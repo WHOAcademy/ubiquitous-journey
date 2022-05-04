@@ -50,7 +50,7 @@ jenkins_values: &jenkins_values
       source_context_dir: '/'
       builder_image_kind: "DockerImage"
       builder_image_name: quay.io/openshift/origin-jenkins
-      builder_image_tag: "4.4.0"
+      builder_image_tag: "4.5.0"
     # Jenkins agents for running builds etc
     - name: "jenkins-agent-mvn"
       source_context_dir: "jenkins-agents/jenkins-agent-mvn"
@@ -352,7 +352,7 @@ applications:
       *nexus_values
     ignore_differences: *nexus_ignore_differences
   - name: jenkins
-    enabled: true
+    enabled: false
     source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/jenkins
     source_ref: "jenkins-0.0.20"
