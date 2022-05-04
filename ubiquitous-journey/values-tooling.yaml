@@ -363,7 +363,7 @@ applications:
       *jenkins_values
     ignore_differences: *jenkins_ignore_differences
   - name: pact-broker
-    enabled: true
+    enabled: false
     source: https://github.com/redhat-cop/helm-charts.git
     source_path: charts/pact-broker
     source_ref: "pact-broker-0.0.2"
