@@ -1,3 +1,11 @@
+# Notice:
+This document is out-of-date. Please refer this [document](https://github.com/WHOAcademy/lxp-docs/blob/master/how_to/Create_Sealed_Secrets.md) for latest information and commands
+
+---
+
+
+
+
 # Sealed Secrets Help
 
 ## 🕵️‍♀️ Generate Sealed Secrets:
