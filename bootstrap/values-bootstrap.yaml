@@ -9,6 +9,8 @@ bootstrap-project:
   dev_namespace: &dev "labs-dev"
   test_namespace: &test "labs-test"
   staging_namespace: &stage "labs-staging"
+  phoenix_namespace: &phoenix "labs-phoenix"
+
   bindings: &binds
       # this labs-devs is the GROUP NAME in IDM
     - name: who-users
@@ -34,6 +36,9 @@ bootstrap-project:
     bindings:
       *binds
   - name: *stage
+    bindings:
+      *binds
+  - name: *phoenix
     bindings:
       *binds
 
